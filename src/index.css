@@ -1,0 +1,151 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Changed to blue */
+    --primary: 232 73% 28%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Changed to red */
+    --secondary: 0 91% 42%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Changed to secondary color (red) */
+    --accent: 0 91% 42%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    /* Changed to blue */
+    --ring: 232 73% 28%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 232 73% 28%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 0 91% 42%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 0 91% 42%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Mobile Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .flex {
+      flex-wrap: wrap;
+    }
+    
+    .text-xl {
+      font-size: 1.125rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-3xl {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      background: white !important;
+      color: black !important;
+    }
+    
+    .page-break {
+      page-break-before: always;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ACLC specific styles */
+.aclc-logo {
+  max-width: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}
+
+.aclc-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media print {
+  .print-only {
+    display: block !important;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+}
